@@ -1,0 +1,13 @@
+*~
+.DS_Store
+Pods
+*.xcuserstate
+project.xcworkspace
+xcuserdata
+UserInterfaceState.xcuserstate
+project.xcworkspace/
+xcuserdata/
+UserInterface.xcuserstate
+项目文档/
+*.xcworkspace
+*.lock
