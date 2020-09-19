@@ -8,6 +8,8 @@ target 'Old Face Sample' do
   # Pods for Old Face Sample
   pod 'Firebase/MLVision', '~> 6.0.0'
   pod 'Firebase/MLVisionFaceModel', '~> 6.0.0'
+  #OpenCV
+  pod 'OpenCV', '3.4.2'
 
   target 'Old Face SampleTests' do
     inherit! :search_paths

@@ -11,6 +11,9 @@
 		3BF89110A49CDB6E6394D5F6 /* Pods_Old_Face_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBF08C728D6448621181A72 /* Pods_Old_Face_Sample.framework */; };
 		424094172515AC6C004658B4 /* FBFaceDetectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424094162515AC6C004658B4 /* FBFaceDetectManager.swift */; };
 		4240942425160C06004658B4 /* jjysample.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4240942325160C06004658B4 /* jjysample.jpeg */; };
+		4240942825161975004658B4 /* Age90.png in Resources */ = {isa = PBXBuildFile; fileRef = 4240942725161975004658B4 /* Age90.png */; };
+		4240942A251619B8004658B4 /* OldFaceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42409429251619B8004658B4 /* OldFaceOperation.swift */; };
+		42409437251638A4004658B4 /* MovingLeastSquareHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42409435251638A4004658B4 /* MovingLeastSquareHelper.mm */; };
 		42EF5C182514E1B200BED947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF5C172514E1B200BED947 /* AppDelegate.swift */; };
 		42EF5C1C2514E1B200BED947 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF5C1B2514E1B200BED947 /* ViewController.swift */; };
 		42EF5C1F2514E1B200BED947 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EF5C1D2514E1B200BED947 /* Main.storyboard */; };
@@ -74,6 +77,12 @@
 		41B9329AD2DC722102ED1BE7 /* Pods-Old Face Sample-Old Face SampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Old Face Sample-Old Face SampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-Old Face Sample-Old Face SampleUITests/Pods-Old Face Sample-Old Face SampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		424094162515AC6C004658B4 /* FBFaceDetectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFaceDetectManager.swift; sourceTree = "<group>"; };
 		4240942325160C06004658B4 /* jjysample.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jjysample.jpeg; sourceTree = "<group>"; };
+		4240942725161975004658B4 /* Age90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Age90.png; sourceTree = "<group>"; };
+		42409429251619B8004658B4 /* OldFaceOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldFaceOperation.swift; sourceTree = "<group>"; };
+		4240942C25161C83004658B4 /* Old Face Sample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Old Face Sample-Bridging-Header.h"; sourceTree = "<group>"; };
+		42409434251638A4004658B4 /* MovingLeastSquareHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingLeastSquareHelper.h; sourceTree = "<group>"; };
+		42409435251638A4004658B4 /* MovingLeastSquareHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MovingLeastSquareHelper.mm; sourceTree = "<group>"; };
+		42409436251638A4004658B4 /* MovingLeastSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingLeastSquare.h; sourceTree = "<group>"; };
 		42EF5C142514E1B200BED947 /* Old Face Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Old Face Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EF5C172514E1B200BED947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42EF5C1B2514E1B200BED947 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +149,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4240942625161935004658B4 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4240942725161975004658B4 /* Age90.png */,
+				4240942325160C06004658B4 /* jjysample.jpeg */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		4240942B25161C00004658B4 /* OldFaceOperation */ = {
+			isa = PBXGroup;
+			children = (
+				42409436251638A4004658B4 /* MovingLeastSquare.h */,
+				42409434251638A4004658B4 /* MovingLeastSquareHelper.h */,
+				42409435251638A4004658B4 /* MovingLeastSquareHelper.mm */,
+				42409429251619B8004658B4 /* OldFaceOperation.swift */,
+			);
+			path = OldFaceOperation;
+			sourceTree = "<group>";
+		};
 		42EF5C0B2514E1B200BED947 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +194,8 @@
 		42EF5C162514E1B200BED947 /* Old Face Sample */ = {
 			isa = PBXGroup;
 			children = (
+				4240942B25161C00004658B4 /* OldFaceOperation */,
+				4240942625161935004658B4 /* Resource */,
 				42EF5C562514E4BC00BED947 /* ThridLib */,
 				424094162515AC6C004658B4 /* FBFaceDetectManager.swift */,
 				42EF5C172514E1B200BED947 /* AppDelegate.swift */,
@@ -174,6 +205,7 @@
 				42EF5C222514E1B900BED947 /* LaunchScreen.storyboard */,
 				42EF5C252514E1B900BED947 /* Info.plist */,
 				42EF5C692514E8FA00BED947 /* GoogleService-Info.plist */,
+				4240942C25161C83004658B4 /* Old Face Sample-Bridging-Header.h */,
 			);
 			path = "Old Face Sample";
 			sourceTree = "<group>";
@@ -199,7 +231,6 @@
 		42EF5C562514E4BC00BED947 /* ThridLib */ = {
 			isa = PBXGroup;
 			children = (
-				4240942325160C06004658B4 /* jjysample.jpeg */,
 				42EF5C572514E4DB00BED947 /* GPUImage.xcodeproj */,
 			);
 			path = ThridLib;
@@ -300,6 +331,7 @@
 				TargetAttributes = {
 					42EF5C132514E1B200BED947 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 					42EF5C292514E1B900BED947 = {
 						CreatedOnToolsVersion = 11.6;
@@ -352,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4240942825161975004658B4 /* Age90.png in Resources */,
 				4240942425160C06004658B4 /* jjysample.jpeg in Resources */,
 				42EF5C242514E1B900BED947 /* LaunchScreen.storyboard in Resources */,
 				42EF5C6A2514E8FA00BED947 /* GoogleService-Info.plist in Resources */,
@@ -518,6 +551,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4240942A251619B8004658B4 /* OldFaceOperation.swift in Sources */,
+				42409437251638A4004658B4 /* MovingLeastSquareHelper.mm in Sources */,
 				42EF5C1C2514E1B200BED947 /* ViewController.swift in Sources */,
 				42EF5C182514E1B200BED947 /* AppDelegate.swift in Sources */,
 				424094172515AC6C004658B4 /* FBFaceDetectManager.swift in Sources */,
@@ -699,6 +734,7 @@
 			baseConfigurationReference = 5B0807F0D34B0FBDFC9144DF /* Pods-Old Face Sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YT6QHNRQP3;
 				INFOPLIST_FILE = "Old Face Sample/Info.plist";
@@ -709,6 +745,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.machenshuang.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Old Face Sample/OldFaceOperation/Old Face Sample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -719,6 +757,7 @@
 			baseConfigurationReference = EFECD6ACC5D415BA252DFF6A /* Pods-Old Face Sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YT6QHNRQP3;
 				INFOPLIST_FILE = "Old Face Sample/Info.plist";
@@ -729,6 +768,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.machenshuang.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Old Face Sample/OldFaceOperation/Old Face Sample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
