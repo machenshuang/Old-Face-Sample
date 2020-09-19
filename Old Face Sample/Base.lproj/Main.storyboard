@@ -16,26 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="VRl-z6-wdN" customClass="RenderView" customModule="GPUImage">
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="VRl-z6-wdN" customClass="RenderView" customModule="GPUImage">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="y44-aJ-aUR">
-                                <rect key="frame" x="30" y="816" width="354" height="31"/>
+                                <rect key="frame" x="30" y="782" width="354" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="krx-gb-EJT"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="sliderValueChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="0Xo-uO-1Kb"/>
+                                    <action selector="sliderValueChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="yrU-rh-2xC"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uas-5S-t1G">
+                                <rect key="frame" x="184" y="824" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="dNu-Bx-czi"/>
+                                    <constraint firstAttribute="height" constant="30" id="s7D-rQ-Tb2"/>
+                                </constraints>
+                                <state key="normal" title="变老"/>
+                                <connections>
+                                    <action selector="transferBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QSk-Wi-Hf5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VRl-z6-wdN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0AP-6p-MaS"/>
+                            <constraint firstItem="uas-5S-t1G" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-8" id="347-l2-V3p"/>
                             <constraint firstItem="VRl-z6-wdN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DWJ-vJ-erx"/>
                             <constraint firstItem="y44-aJ-aUR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Dz9-qN-fPs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="y44-aJ-aUR" secondAttribute="bottom" constant="16" id="KKx-VK-m9z"/>
+                            <constraint firstItem="uas-5S-t1G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gp6-Cg-Mgj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="y44-aJ-aUR" secondAttribute="bottom" constant="50" id="KKx-VK-m9z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y44-aJ-aUR" secondAttribute="trailing" constant="32" id="NAe-0Y-bo6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VRl-z6-wdN" secondAttribute="bottom" id="Tik-Dx-Lj6"/>
                             <constraint firstItem="VRl-z6-wdN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="X3l-js-cEi"/>
@@ -45,6 +58,7 @@
                     <connections>
                         <outlet property="renderView" destination="VRl-z6-wdN" id="5wh-ba-paH"/>
                         <outlet property="sliderView" destination="y44-aJ-aUR" id="W0e-hq-puf"/>
+                        <outlet property="transferBtn" destination="uas-5S-t1G" id="nqx-Yl-3lU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

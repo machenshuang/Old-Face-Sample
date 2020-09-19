@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		10BE571A649492154B5FE1F1 /* Pods_Old_Face_Sample_Old_Face_SampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D0345F57217C926693346D /* Pods_Old_Face_Sample_Old_Face_SampleUITests.framework */; };
 		3BF89110A49CDB6E6394D5F6 /* Pods_Old_Face_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBF08C728D6448621181A72 /* Pods_Old_Face_Sample.framework */; };
+		424094172515AC6C004658B4 /* FBFaceDetectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424094162515AC6C004658B4 /* FBFaceDetectManager.swift */; };
+		4240942425160C06004658B4 /* jjysample.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4240942325160C06004658B4 /* jjysample.jpeg */; };
 		42EF5C182514E1B200BED947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF5C172514E1B200BED947 /* AppDelegate.swift */; };
 		42EF5C1C2514E1B200BED947 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF5C1B2514E1B200BED947 /* ViewController.swift */; };
 		42EF5C1F2514E1B200BED947 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EF5C1D2514E1B200BED947 /* Main.storyboard */; };
@@ -70,6 +72,8 @@
 /* Begin PBXFileReference section */
 		2D5EA502262648B61D77B3BB /* Pods-Old Face SampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Old Face SampleTests.release.xcconfig"; path = "Target Support Files/Pods-Old Face SampleTests/Pods-Old Face SampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		41B9329AD2DC722102ED1BE7 /* Pods-Old Face Sample-Old Face SampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Old Face Sample-Old Face SampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-Old Face Sample-Old Face SampleUITests/Pods-Old Face Sample-Old Face SampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		424094162515AC6C004658B4 /* FBFaceDetectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFaceDetectManager.swift; sourceTree = "<group>"; };
+		4240942325160C06004658B4 /* jjysample.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jjysample.jpeg; sourceTree = "<group>"; };
 		42EF5C142514E1B200BED947 /* Old Face Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Old Face Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EF5C172514E1B200BED947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42EF5C1B2514E1B200BED947 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				42EF5C562514E4BC00BED947 /* ThridLib */,
+				424094162515AC6C004658B4 /* FBFaceDetectManager.swift */,
 				42EF5C172514E1B200BED947 /* AppDelegate.swift */,
 				42EF5C1B2514E1B200BED947 /* ViewController.swift */,
 				42EF5C1D2514E1B200BED947 /* Main.storyboard */,
@@ -194,6 +199,7 @@
 		42EF5C562514E4BC00BED947 /* ThridLib */ = {
 			isa = PBXGroup;
 			children = (
+				4240942325160C06004658B4 /* jjysample.jpeg */,
 				42EF5C572514E4DB00BED947 /* GPUImage.xcodeproj */,
 			);
 			path = ThridLib;
@@ -346,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4240942425160C06004658B4 /* jjysample.jpeg in Resources */,
 				42EF5C242514E1B900BED947 /* LaunchScreen.storyboard in Resources */,
 				42EF5C6A2514E8FA00BED947 /* GoogleService-Info.plist in Resources */,
 				42EF5C212514E1B900BED947 /* Assets.xcassets in Resources */,
@@ -513,6 +520,7 @@
 			files = (
 				42EF5C1C2514E1B200BED947 /* ViewController.swift in Sources */,
 				42EF5C182514E1B200BED947 /* AppDelegate.swift in Sources */,
+				424094172515AC6C004658B4 /* FBFaceDetectManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,7 +702,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YT6QHNRQP3;
 				INFOPLIST_FILE = "Old Face Sample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -714,7 +722,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YT6QHNRQP3;
 				INFOPLIST_FILE = "Old Face Sample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
