@@ -12,8 +12,8 @@
 		424094172515AC6C004658B4 /* FBFaceDetectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424094162515AC6C004658B4 /* FBFaceDetectManager.swift */; };
 		4240942425160C06004658B4 /* jjysample.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4240942325160C06004658B4 /* jjysample.jpeg */; };
 		4240942825161975004658B4 /* Age90.png in Resources */ = {isa = PBXBuildFile; fileRef = 4240942725161975004658B4 /* Age90.png */; };
-		4240942A251619B8004658B4 /* OldFaceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42409429251619B8004658B4 /* OldFaceOperation.swift */; };
 		42409437251638A4004658B4 /* MovingLeastSquareHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42409435251638A4004658B4 /* MovingLeastSquareHelper.mm */; };
+		4240943C25164A80004658B4 /* OldFaceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4240943B25164A80004658B4 /* OldFaceOperation.swift */; };
 		42EF5C182514E1B200BED947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF5C172514E1B200BED947 /* AppDelegate.swift */; };
 		42EF5C1C2514E1B200BED947 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF5C1B2514E1B200BED947 /* ViewController.swift */; };
 		42EF5C1F2514E1B200BED947 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EF5C1D2514E1B200BED947 /* Main.storyboard */; };
@@ -78,11 +78,11 @@
 		424094162515AC6C004658B4 /* FBFaceDetectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFaceDetectManager.swift; sourceTree = "<group>"; };
 		4240942325160C06004658B4 /* jjysample.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jjysample.jpeg; sourceTree = "<group>"; };
 		4240942725161975004658B4 /* Age90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Age90.png; sourceTree = "<group>"; };
-		42409429251619B8004658B4 /* OldFaceOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldFaceOperation.swift; sourceTree = "<group>"; };
 		4240942C25161C83004658B4 /* Old Face Sample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Old Face Sample-Bridging-Header.h"; sourceTree = "<group>"; };
 		42409434251638A4004658B4 /* MovingLeastSquareHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingLeastSquareHelper.h; sourceTree = "<group>"; };
 		42409435251638A4004658B4 /* MovingLeastSquareHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MovingLeastSquareHelper.mm; sourceTree = "<group>"; };
 		42409436251638A4004658B4 /* MovingLeastSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingLeastSquare.h; sourceTree = "<group>"; };
+		4240943B25164A80004658B4 /* OldFaceOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldFaceOperation.swift; sourceTree = "<group>"; };
 		42EF5C142514E1B200BED947 /* Old Face Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Old Face Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EF5C172514E1B200BED947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42EF5C1B2514E1B200BED947 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -161,10 +161,10 @@
 		4240942B25161C00004658B4 /* OldFaceOperation */ = {
 			isa = PBXGroup;
 			children = (
+				4240943B25164A80004658B4 /* OldFaceOperation.swift */,
 				42409436251638A4004658B4 /* MovingLeastSquare.h */,
 				42409434251638A4004658B4 /* MovingLeastSquareHelper.h */,
 				42409435251638A4004658B4 /* MovingLeastSquareHelper.mm */,
-				42409429251619B8004658B4 /* OldFaceOperation.swift */,
 			);
 			path = OldFaceOperation;
 			sourceTree = "<group>";
@@ -551,8 +551,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4240942A251619B8004658B4 /* OldFaceOperation.swift in Sources */,
 				42409437251638A4004658B4 /* MovingLeastSquareHelper.mm in Sources */,
+				4240943C25164A80004658B4 /* OldFaceOperation.swift in Sources */,
 				42EF5C1C2514E1B200BED947 /* ViewController.swift in Sources */,
 				42EF5C182514E1B200BED947 /* AppDelegate.swift in Sources */,
 				424094172515AC6C004658B4 /* FBFaceDetectManager.swift in Sources */,
@@ -745,7 +745,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.machenshuang.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Old Face Sample/OldFaceOperation/Old Face Sample-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Old Face Sample/Old Face Sample-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -768,7 +768,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.machenshuang.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Old Face Sample/OldFaceOperation/Old Face Sample-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Old Face Sample/Old Face Sample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

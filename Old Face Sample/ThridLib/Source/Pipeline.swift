@@ -51,7 +51,7 @@ public extension ImageSource {
         targets.removeAll()
     }
     
-    func updateTargetsWithTexture(_ texture:Texture) {
+    public func updateTargetsWithTexture(_ texture:Texture) {
 //        if targets.count == 0 { // Deal with the case where no targets are attached by immediately returning framebuffer to cache
 //            framebuffer.lock()
 //            framebuffer.unlock()

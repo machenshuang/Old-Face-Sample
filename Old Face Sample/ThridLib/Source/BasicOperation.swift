@@ -29,10 +29,10 @@ open class BasicOperation: ImageProcessingOperation {
         }
     }
 
-    let renderPipelineState: MTLRenderPipelineState
+    public let renderPipelineState: MTLRenderPipelineState
     let operationName: String
     var inputTextures = [UInt:Texture]()
-    let textureInputSemaphore = DispatchSemaphore(value:1)
+    public let textureInputSemaphore = DispatchSemaphore(value:1)
     var useNormalizedTextureCoordinates = true
     var metalPerformanceShaderPathway: ((MTLCommandBuffer, [UInt:Texture], Texture) -> ())?
 
@@ -50,7 +50,7 @@ open class BasicOperation: ImageProcessingOperation {
         // TODO: Finish implementation later
     }
     
-    public func newTextureAvailable(_ texture: Texture, fromSourceIndex: UInt) {
+    open func newTextureAvailable(_ texture: Texture, fromSourceIndex: UInt) {
         let _ = textureInputSemaphore.wait(timeout:DispatchTime.distantFuture)
         defer {
             textureInputSemaphore.signal()
@@ -117,7 +117,7 @@ open class BasicOperation: ImageProcessingOperation {
         }
     }
     
-    func removeTransientInputs() {
+    public func removeTransientInputs() {
         for index in 0..<self.maximumInputs {
             if let texture = inputTextures[index], texture.timingStyle.isTransient() {
                 inputTextures[index] = nil

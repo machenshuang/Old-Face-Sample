@@ -16,9 +16,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var sliderView: UISlider!
     @IBOutlet weak var transferBtn: UIButton!
     private var imageInput: PictureInput!
+    private var imageInput2: PictureInput?
     private var samplerImage: UIImage!
+    private var imageOutput: PictureOutput!
     
-    private var effectOperation: BrightnessAdjustment!
+    private var alphaBlend: AlphaBlend!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,27 +32,70 @@ class ViewController: UIViewController {
         } else {
             self.samplerImage = image.decompressImage()!
         }
-    
+        self.alphaBlend = AlphaBlend()
         self.imageInput = PictureInput(image: self.samplerImage)
-        self.effectOperation = BrightnessAdjustment()
-        self.imageInput --> self.effectOperation --> self.renderView
+        self.imageInput --> self.renderView
         self.imageInput.processImage()
     }
 
     @IBAction func sliderValueChange(_ sender: UISlider) {
-        self.effectOperation.brightness = sender.value;
-        self.imageInput.processImage()
+        //self.imageInput.processImage()
+        let value = sender.value
+        self.alphaBlend.mix = value
+        DispatchQueue.global().async { [weak self] in
+            autoreleasepool{
+                guard let `self` = self else { return }
+                guard let imageInput2 = self.imageInput2 else { return }
+                self.imageInput.processImage()
+                //imageInput2.processImage()
+            }
+            
+        }
+        
     }
     
     @IBAction func transferBtnClick(_ sender: UIButton) {
-        FBFaceDetectManager.default.detectLandmarks(by: self.samplerImage) { (faceLandmarks, error) in
+        FBFaceDetectManager.default.detectLandmarks(by: self.samplerImage) { [weak self](faceLandmarks, error) in
+            guard let `self` = self else { return }
             if let error = error {
                 debugPrint("\(error)")
             }
             guard let faceLandmarks = faceLandmarks else {
                 return
             }
-            debugPrint(faceLandmarks)
+            
+//            UIGraphicsBeginImageContext(self.samplerImage.size)
+//            self.samplerImage.draw(at: .zero)
+//            let context = UIGraphicsGetCurrentContext()
+//            UIColor.red.set()
+//            for (_, item) in faceLandmarks.enumerated() {
+//                let rect = CGRect(x: item.x, y: item.y, width: 10, height: 10)
+//                UIRectFill(rect)
+//            }
+//            let image = UIImage(cgImage: context!.makeImage()!)
+//            UIGraphicsEndImageContext()
+            self.imageInput.removeAllTargets()
+            
+            let oldFaceOperation = OldFaceOperation()
+            oldFaceOperation.setupData(landmarks: faceLandmarks, inputSize: self.samplerImage.size)
+            
+            let overlayBlend = OverlayBlend()
+            
+            self.imageOutput = PictureOutput()
+            self.imageOutput.imageAvailableCallback = { [weak self](image) in
+                guard let `self` = self else { return }
+                self.alphaBlend.mix = 0.5
+                self.imageInput.removeAllTargets()
+                self.imageInput2 = PictureInput(image: image)
+                self.imageInput --> self.alphaBlend --> self.renderView
+                self.imageInput2! --> self.alphaBlend
+                self.imageInput.processImage()
+                self.imageInput2!.processImage()
+            }
+            
+            self.imageInput --> overlayBlend --> self.imageOutput
+            self.imageInput --> oldFaceOperation --> overlayBlend
+            self.imageInput.processImage()
         }
     }
 }
