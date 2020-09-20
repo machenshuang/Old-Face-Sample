@@ -15,6 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var renderView: RenderView!
     @IBOutlet weak var sliderView: UISlider!
     @IBOutlet weak var transferBtn: UIButton!
+    @IBOutlet weak var imagePickerBtn: UIButton!
+
+    private let imagePickerController = UIImagePickerController()
+    
     private var imageInput: PictureInput!
     private var imageInput2: PictureInput?
     private var samplerImage: UIImage!
@@ -36,8 +40,14 @@ class ViewController: UIViewController {
         self.imageInput = PictureInput(image: self.samplerImage)
         self.imageInput --> self.renderView
         self.imageInput.processImage()
+        
+        self.imagePickerController.delegate = self
     }
 
+    @IBAction func imagePickerBtnClick(_ sender: UIButton) {
+        self.present(self.imagePickerController, animated: true, completion: nil)
+    }
+    
     @IBAction func sliderValueChange(_ sender: UISlider) {
         //self.imageInput.processImage()
         let value = sender.value
@@ -46,10 +56,8 @@ class ViewController: UIViewController {
             autoreleasepool{
                 guard let `self` = self else { return }
                 guard let imageInput2 = self.imageInput2 else { return }
-                self.imageInput.processImage()
-                //imageInput2.processImage()
+                imageInput2.processImage()
             }
-            
         }
         
     }
@@ -86,11 +94,15 @@ class ViewController: UIViewController {
                 guard let `self` = self else { return }
                 self.alphaBlend.mix = 0.5
                 self.imageInput.removeAllTargets()
+                self.alphaBlend.removeAllTargets()
                 self.imageInput2 = PictureInput(image: image)
                 self.imageInput --> self.alphaBlend --> self.renderView
                 self.imageInput2! --> self.alphaBlend
                 self.imageInput.processImage()
                 self.imageInput2!.processImage()
+                DispatchQueue.main.async {
+                    self.sliderView.value = 0.5
+                }
             }
             
             self.imageInput --> overlayBlend --> self.imageOutput
@@ -100,6 +112,30 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            let maxLength = max(editedImage.size.width, editedImage.size.height)
+            if maxLength > 2048 {
+                self.samplerImage = editedImage.resizeImageTo(target: 2048)
+            } else {
+                self.samplerImage = editedImage.decompressImage()!
+            }
+        }
+        self.imageInput.removeAllTargets()
+        self.alphaBlend.removeAllTargets()
+        self.imageInput = PictureInput(image: self.samplerImage)
+        self.imageInput2?.removeAllTargets()
+        self.imageInput2 = nil
+        self.imageInput --> self.renderView
+        self.imageInput.processImage()
+        self.imagePickerController.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.imagePickerController.dismiss(animated: true, completion: nil)
+    }
+}
 
 extension UIImage {
     func resizeImageTo(target: CGFloat) -> UIImage? {

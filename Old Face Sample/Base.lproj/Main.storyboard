@@ -21,7 +21,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="y44-aJ-aUR">
-                                <rect key="frame" x="30" y="782" width="354" height="31"/>
+                                <rect key="frame" x="30" y="774" width="354" height="31"/>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="krx-gb-EJT"/>
                                 </constraints>
@@ -29,15 +30,31 @@
                                     <action selector="sliderValueChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="yrU-rh-2xC"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uas-5S-t1G">
-                                <rect key="frame" x="184" y="824" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uas-5S-t1G">
+                                <rect key="frame" x="184" y="808" width="46" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="dNu-Bx-czi"/>
-                                    <constraint firstAttribute="height" constant="30" id="s7D-rQ-Tb2"/>
+                                    <constraint firstAttribute="height" constant="46" id="s7D-rQ-Tb2"/>
                                 </constraints>
-                                <state key="normal" title="变老"/>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="person.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
                                 <connections>
                                     <action selector="transferBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QSk-Wi-Hf5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfj-X8-Tya">
+                                <rect key="frame" x="349" y="808" width="33" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="jif-98-A3Y"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="folder.fill.badge.plus" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="imagePickerBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bjb-ay-qIH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -48,14 +65,17 @@
                             <constraint firstItem="VRl-z6-wdN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DWJ-vJ-erx"/>
                             <constraint firstItem="y44-aJ-aUR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Dz9-qN-fPs"/>
                             <constraint firstItem="uas-5S-t1G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gp6-Cg-Mgj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="y44-aJ-aUR" secondAttribute="bottom" constant="50" id="KKx-VK-m9z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="y44-aJ-aUR" secondAttribute="bottom" constant="58" id="KKx-VK-m9z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y44-aJ-aUR" secondAttribute="trailing" constant="32" id="NAe-0Y-bo6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VRl-z6-wdN" secondAttribute="bottom" id="Tik-Dx-Lj6"/>
                             <constraint firstItem="VRl-z6-wdN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="X3l-js-cEi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yfj-X8-Tya" secondAttribute="trailing" constant="32" id="biX-aH-m7V"/>
+                            <constraint firstItem="uas-5S-t1G" firstAttribute="bottom" secondItem="Yfj-X8-Tya" secondAttribute="bottom" id="qpf-Aa-TDc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="imagePickerBtn" destination="Yfj-X8-Tya" id="EgI-kG-lbO"/>
                         <outlet property="renderView" destination="VRl-z6-wdN" id="5wh-ba-paH"/>
                         <outlet property="sliderView" destination="y44-aJ-aUR" id="W0e-hq-puf"/>
                         <outlet property="transferBtn" destination="uas-5S-t1G" id="nqx-Yl-3lU"/>
@@ -66,4 +86,8 @@
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="folder.fill.badge.plus" catalog="system" width="128" height="86"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
